@@ -12,13 +12,65 @@
 	<div class="drawer">
 		<input id="my-drawer" type="checkbox" class="drawer-toggle" />
 		<div class="drawer-content">
-		  <!-- Page content here -->
-		    <label for="my-drawer" class="btn btn-primary drawer-button">Navigation</label>
-		    <div class="avatar">
-				<div class="w-24 rounded">
-				<img src="https://placeimg.com/192/192/people" />
-				</div>
-			</div>
+            <!-- Page content here -->
+            <div class="h-screen flex flex-col justify-center items-center gap-5">
+
+                <!-- TITLE -->
+                <h1 class="capitalize text-7xl font-bold">my favourite zoo</h1>
+
+                <!-- PROFILE PICTURE -->
+                <div class="avatar">
+                <div class="w-24 rounded">
+                    <img src="https://placeimg.com/192/192/people" />
+                    </div>
+                </div>
+
+                <!-- NAVIGAITON BUTTON -->
+                <label for="my-drawer" class="btn btn-primary drawer-button">Navigation</label>
+
+                <!-- Change Theme -->
+                <button class="btn btn-secondary" onclick="changeTheme()">CHANGE THEME</button>
+                
+
+                <!-- TABLE -->
+                <div class="overflow-x-auto">
+                    <table class="table w-full">
+                        <!-- head -->
+                        <thead>
+                            <tr>
+                                <th></th>
+                                <th>Name</th>
+                                <th>Job</th>
+                                <th>Favorite Color</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- row 1 -->
+                            <tr>
+                                <th>1</th>
+                                <td>Cy Ganderton</td>
+                                <td>Quality Control Specialist</td>
+                                <td>Blue</td>
+                            </tr>
+                            <!-- row 2 -->
+                            <tr>
+                                <th>2</th>
+                                <td>Hart Hagerty</td>
+                                <td>Desktop Support Technician</td>
+                                <td>Purple</td>
+                            </tr>
+                            <!-- row 3 -->
+                            <tr>
+                                <th>3</th>
+                                <td>Brice Swyre</td>
+                                <td>Tax Accountant</td>
+                                <td>Red</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
 		</div> 
 		<div class="drawer-side">
 		  <label for="my-drawer" class="drawer-overlay"></label>
@@ -34,53 +86,19 @@
 
 	
 
-	<div class="overflow-x-auto">
-		<table class="table w-full">
-		  <!-- head -->
-		  <thead>
-			<tr>
-			  <th></th>
-			  <th>Name</th>
-			  <th>Job</th>
-			  <th>Favorite Color</th>
-			</tr>
-		  </thead>
-		  <tbody>
-			<!-- row 1 -->
-			<tr>
-			  <th>1</th>
-			  <td>Cy Ganderton</td>
-			  <td>Quality Control Specialist</td>
-			  <td>Blue</td>
-			</tr>
-			<!-- row 2 -->
-			<tr>
-			  <th>2</th>
-			  <td>Hart Hagerty</td>
-			  <td>Desktop Support Technician</td>
-			  <td>Purple</td>
-			</tr>
-			<!-- row 3 -->
-			<tr>
-			  <th>3</th>
-			  <td>Brice Swyre</td>
-			  <td>Tax Accountant</td>
-			  <td>Red</td>
-			</tr>
-		  </tbody>
-		</table>
-	</div>
+	
 </body>
 
 </html>
-<style>
-	.red {
-		color: red;
-	}
-
-	.middle {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-	}
-</style>
+<script>
+    function changeTheme() {
+        if (document.getElementsByTagName('html')[0].getAttribute('data-theme')==='cupcake') {
+            document.getElementsByTagName('html')[0].removeAttribute("data-theme", "cupcake")
+            document.getElementsByTagName('html')[0].setAttribute("data-theme", "dark")
+        } else {
+            document.getElementsByTagName('html')[0].removeAttribute("data-theme", "dark")
+            document.getElementsByTagName('html')[0].setAttribute("data-theme", "cupcake")
+        }
+        
+    }
+</script>
